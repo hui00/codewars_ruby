@@ -7,11 +7,21 @@
 # * url = "https://www.cnet.com"                -> domain name = cnet"
 
 def domain_name(url)
-  puts url.split("//")[1].split(".")[0] if url.match?("http")
-  puts url.split(".")[1] if url.match("www")
+  url = url.split(".")[1] if url.match?(/(http).\W*(www)/)
+  url = url.split("//")[1].split(".")[0] if url.match?("http")
+  url = url.split(".")[1] if url.match("www")
+  url = url.split(".")[0] if url.match(/\w.\w/)
 end
 
-domain_name("http://google.com")
-domain_name("www.google.com")
-domain_name("http://google.co.jp")
+# domain_name("http://google.com")
+# domain_name("http://google.co.jp")
+# domain_name("www.xakep.ru")
+# domain_name("https://youtube.com")
+# domain_name("http://github.com/carbonfive/raygun")
+# domain_name('http://www.zcneomnbiec-bites.com')
+# domain_name('https://www.cnet.com')
+domain_name('icann.org')
 
+# Expected: "icann", instead got: "icann.org"
+# Expected: "codewars", instead got: nil
+# Expected: "icann", instead got: "icann.org"
