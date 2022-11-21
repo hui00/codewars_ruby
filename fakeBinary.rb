@@ -7,17 +7,12 @@
 
 def fake_bin(s)
   newst = ""
-  s.split("").each do |v|
-    if (v.to_i < 5)
-      newst = newst + "0"
-    else
-      newst = newst + "1"
+  s.split("").each { |v| if (v.to_i < 5); newst = newst + "0"; else; newst = newst + "1" }
     end
-  end
   puts newst
 end
 
-fake_bin('45385593107843568')
+fake_bin("45385593107843568")
 
 # str.split('').map{ |x| x.to_i < 5 ? 0 : 1 }.join
 # def fake_bin(s)

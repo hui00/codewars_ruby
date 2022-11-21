@@ -5,11 +5,8 @@
 # return it with its digits in descending order.
 # Essentially, rearrange the digits to create the highest possible number.
 
-
 def descending_order(n)
   n.to_s.each_char.sort.reverse.join.to_i
-
 end
 
-
-puts(descending_order(123456789))
+puts(descending_order(123_456_789))

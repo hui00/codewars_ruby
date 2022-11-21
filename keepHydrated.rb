@@ -7,6 +7,9 @@
 def litres(time)
   def litres(time)
     (time.to_i * 0.5).to_i
+    str = "Hello"
+    str.upcase
+
     # your code here
   end
 end
